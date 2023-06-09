@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GraveFinder</string>
+    <string name="logo">logo</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="create_account">Create Account</string>
+    <string name="newusername">Username</string>
+    <string name="newemail">Email</string>
+    <string name="newfirst_name">First Name</string>
+    <string name="newlast_name">Last Name</string>
+    <string name="newpassword">Password</string>
+    <string name="newconfirm_password">Confirm Password</string>
+    <string name="newsign_up">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="user_registration">User Registration</string>
+</resources>
