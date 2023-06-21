@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.gravefinder.R;
+
 import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity {

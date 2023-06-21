@@ -42,7 +42,7 @@ fun hashPassword(password: String): String {
     return Base64.encodeToString(saltedHash, Base64.DEFAULT)
 }
 
-const val BASE_URL = "http://192.168.0.100:8000/"
+const val BASE_URL = "http://192.168.0.120:8000/"
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
