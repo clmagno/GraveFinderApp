@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import org.json.JSONException
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,7 +44,7 @@ fun hashPassword(password: String): String {
     return Base64.encodeToString(saltedHash, Base64.DEFAULT)
 }
 
-const val BASE_URL = "http://192.168.0.120:8000/"
+const val BASE_URL = "http://192.168.1.12:8000/"
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,8 +99,21 @@ class LoginActivity : AppCompatActivity() {
                     }
                 } else {
                     // Handle API error
-                    Toast.makeText(applicationContext, "API error", Toast.LENGTH_SHORT).show()
+                    val errorBody = response.errorBody()?.string()
+                    val errorMessage = if (!errorBody.isNullOrEmpty()) {
+                        // Extract the error message from the error body
+                        try {
+                            val errorJson = JSONObject(errorBody)
+                            errorJson.getString("message")
+                        } catch (e: JSONException) {
+                            "API Error: $errorBody" // Display the error body as the message
+                        }
+                    } else {
+                        "API Error"
+                    }
+                    Toast.makeText(applicationContext, errorMessage, Toast.LENGTH_SHORT).show()
                 }
+
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {

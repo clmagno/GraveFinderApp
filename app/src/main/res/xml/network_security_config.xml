@@ -6,6 +6,6 @@
     </base-config>
     <domain-config cleartextTrafficPermitted="true">
 
-        <domain includeSubdomains="true">192.168.0.120:8000/</domain>
+        <domain includeSubdomains="true">192.168.1.12:8000/</domain>
     </domain-config>
 </network-security-config>
